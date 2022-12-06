@@ -1,3 +1,11 @@
+/*
+Author: Zachary Crimmel
+Start Date: Dec 5, 2022
+Last Updated: Dec6, 2022
+
+From the Rogue/Nethack RPG tutorial by badcodinghabits on YouTube
+*/
+
 #include <ncurses.h>
 #include <stdlib.h>
 
