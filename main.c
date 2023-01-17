@@ -3,7 +3,7 @@ Author: Zachary Crimmel
 Start Date: Dec 5, 2022
 Last Updated: January 17, 2023
 
-From the Rogue/Nethack RPG tutorial by badcodinghabits on YouTube
+Inspired by badcodinghabits series on YouTube
 */
 
 #include <ncurses.h>
