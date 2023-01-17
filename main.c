@@ -1,7 +1,7 @@
 /*
 Author: Zachary Crimmel
 Start Date: Dec 5, 2022
-Last Updated: Dec6, 2022
+Last Updated: January 17, 2023
 
 From the Rogue/Nethack RPG tutorial by badcodinghabits on YouTube
 */
@@ -13,7 +13,6 @@ From the Rogue/Nethack RPG tutorial by badcodinghabits on YouTube
 typedef struct Position{
     int x;
     int y;
-    // TILE_TYPE tile;
 }Position;
 
 typedef struct Room{
@@ -22,17 +21,12 @@ typedef struct Room{
     int height;
 
     Position ** doors;
-    // Monster ** monsters;
-    // Item ** items;
-
-
 }Room;
 
 typedef struct Player
 {
     Position position;
     int health;
-    // Room * room;
 } Player;
 
 int screenSetUp();
@@ -88,7 +82,6 @@ Room ** mapSetUp()
 int screenSetUp()
 {
     initscr();
-    printw("Hello World!");
 
     // Makes sure that user input doesn't show up on the screen
     noecho();
@@ -197,8 +190,8 @@ Room * createRoom(int x, int y, int height, int width){
 
     /* Bottom doors */
     newRoom->doors[1] = malloc(sizeof(Position));
-    newRoom->doors[1]->x = rand() % width + newRoom->position.x;
-    newRoom->doors[1]->y = newRoom->position.y + newRoom->height;
+    newRoom->doors[1]->x = rand() % (width - 2) + (newRoom->position.x + 1);
+    newRoom->doors[1]->y = newRoom->position.y + newRoom->height - 1;
 
     /* Left doors */
     newRoom->doors[2] = malloc(sizeof(Position));
